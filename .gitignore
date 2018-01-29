@@ -1,0 +1,30 @@
+
+# vim temp file 
+*.*~
+*.swp
+
+#LaTex process or compile file
+*.dvi
+*.out
+*.log
+*.aux
+*.bbl
+*.blg
+*.brf
+*.gz
+*(busy)
+*.fdb_latexmk
+*.lb
+*.fls
+*.swap
+*.xdv
+share.pdf
+pearson.pdf
+wilcoxon.pdf
+kendall.pdf
+
+#python binary file
+*.pyc
+
+#Mac unused file
+.DS_Store
