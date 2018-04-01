@@ -56,22 +56,19 @@
 
 ## latex-workshop 插件
 
-该插件在保存文件时会自动编译。使用的编译程序为latexmk，能够比较好的判断所需要编译的次数。若需要使用xelatex编译，并且仍然保持自动判断编译次数的特性，可在用户设置中将latex-workshop的`toolchain`设置项改为如下(注意删除默认设置中的`-pdf`参数)：
+该插件在保存文件时会自动编译。使用的编译程序为latexmk，能够比较好的判断所需要编译的次数。若需要使用xelatex编译，并且仍然保持自动判断编译次数的特性，可在用户设置中将latex-workshop的` "latex-workshop.latex.magic.args"`设置项改为如下：
 
 ```json
-"latex-workshop.latex.toolchain": [
-        {
-            "command": "latexmk",
-            "args": [
-                "-xelatex",
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOC%"
-            ]
-        }
-    ]
+"latex-workshop.latex.magic.args": [
+        "-xelatex",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+    ],
 ```
+
+设置后在.tex文件首行加入`%! TEX program = latexmk`即为使用xelatex编译，否则为使用默认的编译方式。
 
 > 注意：xelatex的latexmk支持在texlive的2015的某个版本才开始支持。。。
 
